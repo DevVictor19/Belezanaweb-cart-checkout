@@ -10,10 +10,8 @@ import * as S from "./styles";
 export function LabelCard({ label, children }: Props) {
   return (
     <S.Container>
-      <div>
-        <S.Heading>{label}</S.Heading>
-        <S.Card>{children}</S.Card>
-      </div>
+      <S.Heading>{label}</S.Heading>
+      <S.Card>{children}</S.Card>
     </S.Container>
   );
 }

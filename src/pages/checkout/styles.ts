@@ -11,4 +11,9 @@ export const Container = styled.div`
 
 export const Content = styled.section`
   margin-top: 40px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

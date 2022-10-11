@@ -3,9 +3,7 @@ import { MAIN_THEME } from "../../themes/main";
 
 export const Container = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 360px;
 `;
 
 export const Heading = styled.h2`
@@ -19,7 +17,6 @@ export const Heading = styled.h2`
 
 export const Card = styled.div`
   margin-top: 5px;
-  max-width: 360px;
   max-height: 325px;
   overflow-y: scroll;
   padding: 12px;
