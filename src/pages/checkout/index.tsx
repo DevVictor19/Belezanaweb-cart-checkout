@@ -1,16 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import { Container } from "./styles";
+import * as S from "./styles";
 import { CheckoutNavbar } from "../../components/checkoutNavbar";
 
 export function Checkout() {
   return (
-    <Container>
+    <S.Container>
       <CheckoutNavbar />
-      <div className="content">
+      <S.Content>
         <Outlet />
-      </div>
-    </Container>
+      </S.Content>
+    </S.Container>
   );
 }

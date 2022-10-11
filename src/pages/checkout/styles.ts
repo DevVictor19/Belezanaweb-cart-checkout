@@ -7,8 +7,8 @@ export const Container = styled.div`
   width: 100%;
   background-color: ${MAIN_THEME.colors.gray_very_light};
   padding: 10px;
+`;
 
-  .content {
-    margin-top: 40px;
-  }
+export const Content = styled.section`
+  margin-top: 40px;
 `;
