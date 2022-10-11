@@ -4,6 +4,7 @@ import { LabelCard } from "../LabelCard";
 import { Product } from "../Product";
 import { IProduct } from "../../interfaces/Product";
 import { TotalDisplay } from "../TotalDisplay";
+import { RedirectButton } from "../RedirectButton";
 
 const DUMMMY_PRODUCTS: IProduct[] = [
   {
@@ -58,6 +59,7 @@ export function Bag() {
         discount={30}
         total={618.9}
       />
+      <RedirectButton label="seguir para o pagamento" path="payment" />
     </>
   );
 }
