@@ -1,6 +1,7 @@
 import React from "react";
 
 import { IProduct } from "../../interfaces/Product";
+import { ParseMoneyFormat } from "../../utils/ParseMoneyFormat";
 import * as S from "./styles";
 
 export function Product(props: IProduct) {
@@ -9,7 +10,7 @@ export function Product(props: IProduct) {
       <img height={65} width={65} src={props.img} alt={props.description} />
       <S.Info>
         <h1>{props.description}</h1>
-        <p>R$ {props.price.toFixed(2).replace(".", ",")}</p>
+        <p>R$ {ParseMoneyFormat(props.price)}</p>
       </S.Info>
     </S.Container>
   );
