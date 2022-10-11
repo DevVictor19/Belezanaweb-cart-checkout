@@ -1,6 +1,7 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
 
+import { api } from "../../api/config";
 import { LabelCard } from "../label-card";
 import { CartProduct } from "../cart-product";
 import { TotalDisplay } from "../total-display";
@@ -8,15 +9,13 @@ import { RedirectButton } from "../redirect-button";
 import { IProductsApi } from "../../types/products-api";
 import { CheckoutContext } from "../../types/checkout-context";
 
-const url = "http://www.mocky.io/v2/5b15c4923100004a006f3c07";
-
 export function CartResume() {
   const [checkoutCtx, setCheckoutCtx] = useOutletContext<CheckoutContext>();
 
   React.useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data: IProductsApi) => {
+    api
+      .get<IProductsApi>("/5b15c4923100004a006f3c07")
+      .then(({ data }) => {
         setCheckoutCtx({
           products: data.items.map((item) => {
             return {
@@ -33,8 +32,9 @@ export function CartResume() {
             total: data.total,
           },
         });
-      });
-  }, [url, setCheckoutCtx]);
+      })
+      .catch((e) => console.log(e));
+  }, [setCheckoutCtx]);
 
   return (
     <>
