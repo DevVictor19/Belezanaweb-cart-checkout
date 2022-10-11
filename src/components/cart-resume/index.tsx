@@ -8,6 +8,7 @@ import { TotalDisplay } from "../total-display";
 import { RedirectButton } from "../redirect-button";
 import { IProductsApi } from "../../types/products-api";
 import { CheckoutContext } from "../../types/checkout-context";
+import { Spinner } from "../spinner";
 
 export function CartResume() {
   const [checkoutCtx, setCheckoutCtx] = useOutletContext<CheckoutContext>();
@@ -62,7 +63,7 @@ export function CartResume() {
           <RedirectButton label="seguir para o pagamento" path="payment" />
         </>
       ) : (
-        <div>Carregando...</div>
+        <Spinner />
       )}
     </>
   );
