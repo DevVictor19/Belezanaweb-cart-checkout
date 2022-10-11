@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { MAIN_THEME } from "../../themes/main";
 
 export const Container = styled.div`
-  height: 100vh;
   width: 100%;
+  height: 100%;
   background-color: ${MAIN_THEME.colors.gray_very_light};
   padding: 10px;
 `;
