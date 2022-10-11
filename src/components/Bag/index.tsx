@@ -1,65 +1,69 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 
 import { LabelCard } from "../LabelCard";
 import { Product } from "../Product";
-import { IProduct } from "../../interfaces/Product";
 import { TotalDisplay } from "../TotalDisplay";
 import { RedirectButton } from "../RedirectButton";
+import { IProductsApi } from "../../types/ProductsApi";
+import { CheckoutContext } from "../../types/CheckoutContext";
 
-const DUMMMY_PRODUCTS: IProduct[] = [
-  {
-    description:
-      "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g",
-    id: "24410",
-    img: "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png",
-    price: 225.9,
-  },
-  {
-    description:
-      "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g",
-    id: "24430",
-    img: "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png",
-    price: 225.9,
-  },
-  {
-    description:
-      "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g",
-    id: "244230",
-    img: "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png",
-    price: 225.9,
-  },
-  {
-    description:
-      "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g",
-    id: "14430",
-    img: "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png",
-    price: 225.9,
-  },
-];
+const url = "http://www.mocky.io/v2/5b15c4923100004a006f3c07";
 
 export function Bag() {
+  const [checkoutCtx, setCheckoutCtx] = useOutletContext<CheckoutContext>();
+
+  React.useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data: IProductsApi) => {
+        setCheckoutCtx({
+          products: data.items.map((item) => {
+            return {
+              id: item.product.sku,
+              price: item.product.priceSpecification.price,
+              description: item.product.name,
+              img: item.product.imageObjects[0].small,
+            };
+          }),
+          totalInfo: {
+            discount: data.discount,
+            shippingTotal: data.shippingTotal,
+            subTotal: data.subTotal,
+            total: data.total,
+          },
+        });
+      });
+  }, [url, setCheckoutCtx]);
+
   return (
     <>
-      <LabelCard label="produtos">
-        {DUMMMY_PRODUCTS.map((product) => {
-          return (
-            <Product
-              key={product.id}
-              id={product.id}
-              description={product.description.split("-")[0]}
-              img={product.img}
-              price={product.price}
-            />
-          );
-        })}
-      </LabelCard>
-      <TotalDisplay
-        subTotal={624.8}
-        shippingTotal={5.3}
-        discount={30}
-        total={618.9}
-      />
-      <RedirectButton label="seguir para o pagamento" path="payment" />
+      {checkoutCtx ? (
+        <>
+          <LabelCard label="produtos">
+            {checkoutCtx.products.map((product) => {
+              return (
+                <Product
+                  key={product.id}
+                  id={product.id}
+                  description={product.description.split("-")[0]}
+                  img={product.img}
+                  price={product.price}
+                />
+              );
+            })}
+          </LabelCard>
+          <TotalDisplay
+            subTotal={checkoutCtx.totalInfo.subTotal}
+            shippingTotal={checkoutCtx.totalInfo.shippingTotal}
+            discount={checkoutCtx.totalInfo.discount}
+            total={checkoutCtx.totalInfo.total}
+          />
+          <RedirectButton label="seguir para o pagamento" path="payment" />
+        </>
+      ) : (
+        <div>Carregando...</div>
+      )}
     </>
   );
 }

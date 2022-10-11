@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IProduct } from "../../interfaces/Product";
+import { IProduct } from "../../types/Product";
 import { ParseMoneyFormat } from "../../utils/ParseMoneyFormat";
 import * as S from "./styles";
 

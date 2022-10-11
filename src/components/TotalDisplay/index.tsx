@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ICartTotal } from "../../interfaces/CartTotal";
+import { ICartTotal } from "../../types/CartTotal";
 import { ParseMoneyFormat } from "../../utils/ParseMoneyFormat";
 import * as S from "./styles";
 
@@ -14,15 +14,15 @@ export function TotalDisplay(props: ICartTotal) {
         </S.Item>
         <S.Item>
           <p>FRETE</p>
-          <p>R$ {ParseMoneyFormat(props.subTotal)}</p>
+          <p>R$ {ParseMoneyFormat(props.shippingTotal)}</p>
         </S.Item>
         <S.Item className="discount">
           <p>DESCONTO</p>
-          <p>- R$ {ParseMoneyFormat(props.subTotal)}</p>
+          <p>- R$ {ParseMoneyFormat(props.discount)}</p>
         </S.Item>
         <S.Item className="total">
           <p>TOTAL</p>
-          <p>R$ {ParseMoneyFormat(props.subTotal)}</p>
+          <p>R$ {ParseMoneyFormat(props.total)}</p>
         </S.Item>
       </ul>
     </S.Container>

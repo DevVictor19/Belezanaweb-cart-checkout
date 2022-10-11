@@ -3,10 +3,10 @@ import { Outlet } from "react-router-dom";
 
 import * as S from "./styles";
 import { CheckoutNavbar } from "../../components/CheckoutNavbar";
-import { ICheckoutContext } from "../../interfaces/CheckOutContext";
+import { ICheckoutResume } from "../../types/CheckoutResume";
 
 export function Checkout() {
-  const [checkoutCtx, setCheckoutCtx] = React.useState<ICheckoutContext | null>(
+  const [checkoutCtx, setCheckoutCtx] = React.useState<ICheckoutResume | null>(
     null
   );
 
