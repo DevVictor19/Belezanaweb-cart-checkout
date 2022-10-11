@@ -24,4 +24,23 @@ export const Card = styled.div`
   border-radius: 3px;
   background-color: ${MAIN_THEME.colors.white};
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${MAIN_THEME.colors.gray_very_light};
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: ${MAIN_THEME.colors.gray_dark};
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
 `;
