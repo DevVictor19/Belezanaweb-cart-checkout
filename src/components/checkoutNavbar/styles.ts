@@ -23,6 +23,7 @@ export const StyledNav = styled.nav`
     justify-content: center;
     align-items: center;
     gap: 38px;
+    padding: 0 16px;
 
     a {
       text-decoration: none;
