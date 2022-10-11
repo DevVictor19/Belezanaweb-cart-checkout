@@ -1,10 +1,10 @@
 import React from "react";
 
-import { IProduct } from "../../types/Product";
-import { ParseMoneyFormat } from "../../utils/ParseMoneyFormat";
+import { IProduct } from "../../types/cart-product";
+import { ParseMoneyFormat } from "../../utils/parse-money-format";
 import * as S from "./styles";
 
-export function Product(props: IProduct) {
+export function CartProduct(props: IProduct) {
   return (
     <S.Container>
       <img height={65} width={65} src={props.img} alt={props.description} />

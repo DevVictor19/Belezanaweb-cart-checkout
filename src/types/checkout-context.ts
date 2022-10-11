@@ -1,4 +1,4 @@
-import { ICheckoutResume } from "./CheckoutResume";
+import { ICheckoutResume } from "./checkout-resume";
 
 export type CheckoutContext = [
   ICheckoutResume | null,

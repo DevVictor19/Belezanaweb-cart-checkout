@@ -2,15 +2,15 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 
 import { LabelCard } from "../label-card";
-import { Product } from "../product";
+import { CartProduct } from "../cart-product";
 import { TotalDisplay } from "../total-display";
 import { RedirectButton } from "../redirect-button";
-import { IProductsApi } from "../../types/ProductsApi";
-import { CheckoutContext } from "../../types/CheckoutContext";
+import { IProductsApi } from "../../types/products-api";
+import { CheckoutContext } from "../../types/checkout-context";
 
 const url = "http://www.mocky.io/v2/5b15c4923100004a006f3c07";
 
-export function Bag() {
+export function CartResume() {
   const [checkoutCtx, setCheckoutCtx] = useOutletContext<CheckoutContext>();
 
   React.useEffect(() => {
@@ -43,7 +43,7 @@ export function Bag() {
           <LabelCard label="produtos">
             {checkoutCtx.products.map((product) => {
               return (
-                <Product
+                <CartProduct
                   key={product.id}
                   id={product.id}
                   description={product.description.split("-")[0]}

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { ICartTotal } from "../../types/CartTotal";
-import { ParseMoneyFormat } from "../../utils/ParseMoneyFormat";
+import { ICartTotal } from "../../types/cart-total";
+import { ParseMoneyFormat } from "../../utils/parse-money-format";
 import * as S from "./styles";
 
 export function TotalDisplay(props: ICartTotal) {

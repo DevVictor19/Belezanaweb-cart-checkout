@@ -1,4 +1,4 @@
-import { ICartTotal } from "./CartTotal";
+import { ICartTotal } from "./cart-total";
 
 interface IProductApi {
   quantity: number;
