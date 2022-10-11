@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 import * as S from "./styles";
-import { CheckoutNavbar } from "../../components/CheckoutNavbar/index";
+import { CheckoutNavbar } from "../../components/checkout-navbar";
 import { ICheckoutResume } from "../../types/CheckoutResume";
 
 export function Checkout() {

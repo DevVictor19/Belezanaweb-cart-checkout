@@ -1,10 +1,10 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
 
-import { LabelCard } from "../LabelCard/index";
-import { Product } from "../Product/index";
-import { TotalDisplay } from "../TotalDisplay/index";
-import { RedirectButton } from "../RedirectButton/index";
+import { LabelCard } from "../label-card";
+import { Product } from "../product";
+import { TotalDisplay } from "../total-display";
+import { RedirectButton } from "../redirect-button";
 import { IProductsApi } from "../../types/ProductsApi";
 import { CheckoutContext } from "../../types/CheckoutContext";
 
