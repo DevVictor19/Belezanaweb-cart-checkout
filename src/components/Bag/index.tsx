@@ -2,7 +2,7 @@ import React from "react";
 
 import { LabelCard } from "../LabelCard";
 
-export function Products() {
+export function Bag() {
   return (
     <>
       <LabelCard label="produtos">
