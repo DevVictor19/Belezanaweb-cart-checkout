@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Checkout } from "./pages/checkout";
-import { Products } from "./components/products";
+import { Checkout } from "./pages/Checkout";
+import { Products } from "./components/Product";
 
 export function AppRoutes() {
   return (
