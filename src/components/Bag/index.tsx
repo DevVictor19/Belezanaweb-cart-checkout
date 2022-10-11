@@ -3,6 +3,7 @@ import React from "react";
 import { LabelCard } from "../LabelCard";
 import { Product } from "../Product";
 import { IProduct } from "../../interfaces/Product";
+import { TotalDisplay } from "../TotalDisplay";
 
 const DUMMMY_PRODUCTS: IProduct[] = [
   {
@@ -51,6 +52,12 @@ export function Bag() {
           );
         })}
       </LabelCard>
+      <TotalDisplay
+        subTotal={624.8}
+        shippingTotal={5.3}
+        discount={30}
+        total={618.9}
+      />
     </>
   );
 }
