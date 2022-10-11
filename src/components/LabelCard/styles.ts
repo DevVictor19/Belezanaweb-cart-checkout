@@ -7,7 +7,7 @@ export const Heading = styled.h2`
   line-height: 17px;
   color: ${MAIN_THEME.colors.gray_dark};
   text-transform: uppercase;
-  padding: 0 16px;
+  padding: 0 14px;
 `;
 
 export const Card = styled.div`
