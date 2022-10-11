@@ -17,8 +17,8 @@ export const Heading = styled.h2`
 
 export const Card = styled.div`
   margin-top: 5px;
-  max-height: 325px;
-  overflow-y: scroll;
+  max-height: 347px;
+  overflow-y: auto;
   padding: 12px;
   width: 100%;
   border-radius: 3px;
