@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { MAIN_THEME } from "../../themes/main";
 
+export const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const Heading = styled.h2`
   font-size: 14px;
   font-weight: 700;

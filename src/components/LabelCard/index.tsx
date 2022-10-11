@@ -9,9 +9,11 @@ import * as S from "./styles";
 
 export function LabelCard({ label, children }: Props) {
   return (
-    <div>
-      <S.Heading>{label}</S.Heading>
-      <S.Card>{children}</S.Card>
-    </div>
+    <S.Container>
+      <div>
+        <S.Heading>{label}</S.Heading>
+        <S.Card>{children}</S.Card>
+      </div>
+    </S.Container>
   );
 }
