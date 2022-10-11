@@ -1,7 +1,7 @@
 import { IProduct } from "./Product";
 import { ICartTotal } from "./CartTotal";
 
-export interface ICheckoutContext {
+export interface ICheckoutResume {
   products: IProduct[];
   totalInfo: ICartTotal;
 }
