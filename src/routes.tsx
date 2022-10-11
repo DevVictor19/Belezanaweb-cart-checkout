@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Checkout } from "./pages/Checkout";
-import { Products } from "./components/Product";
+import { Products } from "./components/Products";
 
 export function AppRoutes() {
   return (
