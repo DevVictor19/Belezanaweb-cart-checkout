@@ -1,6 +1,5 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
-import { useRedirectHandler } from "../../hooks/use-redirect";
+import { useOutletContext, useNavigate } from "react-router-dom";
 
 import * as S from "./styles";
 import { CheckoutContext } from "../../types/checkout-context";
@@ -10,7 +9,7 @@ import { TotalDisplay } from "../total-display";
 
 export function CheckoutPayment() {
   const checkoutCtx = useOutletContext<CheckoutContext>()[0]!.totalInfo;
-  const redirectHandler = useRedirectHandler("/checkout/confirmation");
+  const navigate = useNavigate();
 
   return (
     <>
@@ -50,7 +49,10 @@ export function CheckoutPayment() {
         discount={checkoutCtx.discount}
         total={checkoutCtx.total}
       />
-      <Button label="finalizar pedido" handleClick={redirectHandler} />
+      <Button
+        label="finalizar pedido"
+        handleClick={(_) => navigate("/checkout/confirmation")}
+      />
     </>
   );
 }

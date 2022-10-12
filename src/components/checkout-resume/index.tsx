@@ -1,5 +1,5 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 
 import { api } from "../../api/config";
 import { LabelCard } from "../label-card";
@@ -9,11 +9,10 @@ import { Button } from "../button";
 import { IProductsApi } from "../../types/products-api";
 import { CheckoutContext } from "../../types/checkout-context";
 import { Spinner } from "../spinner";
-import { useRedirectHandler } from "../../hooks/use-redirect";
 
 export function CheckoutResume() {
   const [checkoutCtx, setCheckoutCtx] = useOutletContext<CheckoutContext>();
-  const redirectHandler = useRedirectHandler("payment");
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     api
@@ -64,7 +63,7 @@ export function CheckoutResume() {
           />
           <Button
             label="seguir para o pagamento"
-            handleClick={redirectHandler}
+            handleClick={(_) => navigate("payment")}
           />
         </>
       ) : (
