@@ -2,6 +2,7 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 import { useRedirectHandler } from "../../hooks/use-redirect";
 
+import * as S from "./styles";
 import { CheckoutContext } from "../../types/checkout-context";
 import { Button } from "../button";
 import { LabelCard } from "../label-card";
@@ -15,28 +16,32 @@ export function CheckoutPayment() {
     <>
       <LabelCard label="cartão de credito">
         <form>
-          <div>
+          <S.InputDiv>
             <label htmlFor="card-number">Número do cartão:</label>
             <input
               id="card-number"
               type="text"
               placeholder="____.____.____.____"
             />
-          </div>
-          <div>
+            <p>Campo Inválido</p>
+          </S.InputDiv>
+          <S.InputDiv>
             <label htmlFor="card-owner">Nome do Titular:</label>
             <input id="card-owner" type="text" placeholder="Como no cartão" />
-          </div>
-          <div>
-            <div>
+            <p>Campo Inválido</p>
+          </S.InputDiv>
+          <S.TwoCollumn>
+            <S.InputDiv>
               <label htmlFor="validity">Validade (mês/ano):</label>
               <input id="validity" type="text" placeholder="__/____" />
-            </div>
-            <div>
+              <p>Campo Inválido</p>
+            </S.InputDiv>
+            <S.InputDiv>
               <label htmlFor="cvv">CVV:</label>
               <input id="cvv" type="text" placeholder="___" />
-            </div>
-          </div>
+              <p>Campo Inválido</p>
+            </S.InputDiv>
+          </S.TwoCollumn>
         </form>
       </LabelCard>
       <TotalDisplay
