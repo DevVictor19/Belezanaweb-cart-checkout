@@ -10,7 +10,7 @@ import { IProductsApi } from "../../types/products-api";
 import { CheckoutContext } from "../../types/checkout-context";
 import { Spinner } from "../spinner";
 
-export function CartResume() {
+export function CheckoutResume() {
   const [checkoutCtx, setCheckoutCtx] = useOutletContext<CheckoutContext>();
 
   React.useEffect(() => {
