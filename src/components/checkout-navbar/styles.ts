@@ -33,7 +33,7 @@ export const StyledNav = styled.nav`
       color: ${MAIN_THEME.colors.gray_light};
 
       &.active {
-        color: ${MAIN_THEME.colors.orange};
+        color: ${MAIN_THEME.colors.primary};
       }
     }
   }

@@ -22,7 +22,7 @@ export const Container = styled.div`
     border: 8px solid #fff;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${MAIN_THEME.colors.orange} transparent transparent
+    border-color: ${MAIN_THEME.colors.primary} transparent transparent
       transparent;
   }
   div:nth-child(1) {
