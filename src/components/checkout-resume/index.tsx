@@ -5,13 +5,15 @@ import { api } from "../../api/config";
 import { LabelCard } from "../label-card";
 import { CartProduct } from "../cart-product";
 import { TotalDisplay } from "../total-display";
-import { RedirectButton } from "../redirect-button";
+import { Button } from "../button";
 import { IProductsApi } from "../../types/products-api";
 import { CheckoutContext } from "../../types/checkout-context";
 import { Spinner } from "../spinner";
+import { useRedirectHandler } from "../../hooks/use-redirect";
 
 export function CheckoutResume() {
   const [checkoutCtx, setCheckoutCtx] = useOutletContext<CheckoutContext>();
+  const redirectHandler = useRedirectHandler("payment");
 
   React.useEffect(() => {
     api
@@ -60,7 +62,10 @@ export function CheckoutResume() {
             discount={checkoutCtx.totalInfo.discount}
             total={checkoutCtx.totalInfo.total}
           />
-          <RedirectButton label="seguir para o pagamento" path="payment" />
+          <Button
+            label="seguir para o pagamento"
+            handleClick={redirectHandler}
+          />
         </>
       ) : (
         <Spinner />
