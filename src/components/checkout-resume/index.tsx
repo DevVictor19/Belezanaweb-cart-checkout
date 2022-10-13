@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { RootState } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 
+import { RootState } from "../../store";
 import { IProductsApi } from "../../types/products-api";
 import { ICartProduct } from "../../types/cart-product";
 import { ICartTotalInfo } from "../../types/cart-total-info";
