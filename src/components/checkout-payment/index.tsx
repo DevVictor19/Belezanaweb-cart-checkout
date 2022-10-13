@@ -1,5 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { RootState } from "../../store";
+import { ICartTotalInfo } from "../../types/cart-total-info";
 
 import * as S from "./styles";
 import { Button } from "../button";
@@ -8,6 +12,10 @@ import { TotalDisplay } from "../total-display";
 
 export function CheckoutPayment() {
   const navigate = useNavigate();
+
+  const totalInfo: ICartTotalInfo = useSelector(
+    (state: RootState) => state.cart.totalInfo!
+  );
 
   return (
     <>
@@ -41,6 +49,12 @@ export function CheckoutPayment() {
           </S.TwoCollumn>
         </form>
       </LabelCard>
+      <TotalDisplay
+        total={totalInfo.total}
+        subTotal={totalInfo.subTotal}
+        discount={totalInfo.discount}
+        shippingTotal={totalInfo.shippingTotal}
+      />
       <Button
         label="finalizar pedido"
         handleClick={(_) => navigate("/checkout/confirmation")}
