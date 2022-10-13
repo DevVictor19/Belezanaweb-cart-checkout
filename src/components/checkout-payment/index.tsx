@@ -1,15 +1,21 @@
 import React from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { RootState } from "../../store";
+import { ICartTotalInfo } from "../../types/cart-total-info";
 
 import * as S from "./styles";
-import { CheckoutContext } from "../../types/checkout-context";
 import { Button } from "../button";
 import { LabelCard } from "../label-card";
 import { TotalDisplay } from "../total-display";
 
 export function CheckoutPayment() {
-  const checkoutCtx = useOutletContext<CheckoutContext>()[0]!.totalInfo;
   const navigate = useNavigate();
+
+  const totalInfo: ICartTotalInfo = useSelector(
+    (state: RootState) => state.cart.totalInfo!
+  );
 
   return (
     <>
@@ -44,10 +50,10 @@ export function CheckoutPayment() {
         </form>
       </LabelCard>
       <TotalDisplay
-        subTotal={checkoutCtx.subTotal}
-        shippingTotal={checkoutCtx.shippingTotal}
-        discount={checkoutCtx.discount}
-        total={checkoutCtx.total}
+        total={totalInfo.total}
+        subTotal={totalInfo.subTotal}
+        discount={totalInfo.discount}
+        shippingTotal={totalInfo.shippingTotal}
       />
       <Button
         label="finalizar pedido"

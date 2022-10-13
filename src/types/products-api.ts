@@ -1,4 +1,4 @@
-import { ICartTotal } from "./cart-total";
+import { ICartTotalInfo } from "./cart-total-info";
 
 interface IProductApi {
   quantity: number;
@@ -27,7 +27,7 @@ interface IProductApi {
   };
 }
 
-export interface IProductsApi extends ICartTotal {
+export interface IProductsApi extends ICartTotalInfo {
   id: string;
   items: IProductApi[];
 }
