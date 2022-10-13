@@ -1,10 +1,10 @@
 import React from "react";
 
-import { ICartTotal } from "../../types/cart-total";
+import { ICartTotalInfo } from "../../types/cart-total-info";
 import { ParseMoneyFormat } from "../../utils/parse-money-format";
 import * as S from "./styles";
 
-export function TotalDisplay(props: ICartTotal) {
+export function TotalDisplay(props: ICartTotalInfo) {
   return (
     <S.Container>
       <ul>
