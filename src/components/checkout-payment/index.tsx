@@ -1,14 +1,12 @@
 import React from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import * as S from "./styles";
-import { CheckoutContext } from "../../types/checkout-context";
 import { Button } from "../button";
 import { LabelCard } from "../label-card";
 import { TotalDisplay } from "../total-display";
 
 export function CheckoutPayment() {
-  const checkoutCtx = useOutletContext<CheckoutContext>()[0]!.totalInfo;
   const navigate = useNavigate();
 
   return (
@@ -43,12 +41,6 @@ export function CheckoutPayment() {
           </S.TwoCollumn>
         </form>
       </LabelCard>
-      <TotalDisplay
-        subTotal={checkoutCtx.subTotal}
-        shippingTotal={checkoutCtx.shippingTotal}
-        discount={checkoutCtx.discount}
-        total={checkoutCtx.total}
-      />
       <Button
         label="finalizar pedido"
         handleClick={(_) => navigate("/checkout/confirmation")}
