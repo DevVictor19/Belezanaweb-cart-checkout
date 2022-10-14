@@ -18,16 +18,19 @@ export const InputDiv = styled.div`
   flex-direction: column;
   margin-bottom: 25px;
 
-  p {
-    display: none;
-  }
-
   label {
     color: ${MAIN_THEME.colors.gray_light};
     font-size: 12px;
     font-weight: 700;
     line-height: 14px;
     margin-bottom: 5px;
+  }
+
+  p {
+    margin-top: 3px;
+    color: ${MAIN_THEME.inputs.error};
+    font-size: 12px;
+    line-height: 14px;
   }
 
   input {
@@ -54,19 +57,9 @@ export const InputDiv = styled.div`
     :focus {
       border-color: ${MAIN_THEME.inputs.focus};
     }
-  }
 
-  &.invalid {
-    input {
+    &.invalid {
       border-color: ${MAIN_THEME.inputs.error};
-    }
-
-    p {
-      display: block;
-      margin-top: 3px;
-      color: ${MAIN_THEME.inputs.error};
-      font-size: 12px;
-      line-height: 14px;
     }
   }
 `;
