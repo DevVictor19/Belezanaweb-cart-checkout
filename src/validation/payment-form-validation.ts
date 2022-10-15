@@ -21,10 +21,11 @@ export const paymentSchema = yup.object().shape({
     .test("valid-date", "Data inválida", (value) => {
       const date = value?.split("/").map(Number);
       const currentYear = new Date().getFullYear();
+      const currentMonth = new Date().getMonth() + 1;
 
       if (!date) return false;
 
-      if (date[0] <= 0 || date[0] > 12) {
+      if (date[0] < currentMonth || date[0] > 12) {
         return false;
       }
 
