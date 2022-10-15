@@ -12,6 +12,7 @@ export const Container = styled.article`
 
 export const Info = styled.div`
   margin-left: 11px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

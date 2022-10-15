@@ -1,7 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import { RedirectButton } from "../../components/redirect-button";
+import { Button } from "../../components/button";
 
 export function Home() {
-  return <RedirectButton label="ir para tela de checkout" path="checkout" />;
+  const navigate = useNavigate();
+
+  return (
+    <Button
+      label="ir para tela de checkout"
+      onClick={(_) => navigate("checkout")}
+    />
+  );
 }

@@ -1,7 +1,7 @@
 export const MAIN_THEME = {
   colors: {
     white: "#FFF",
-    orange: "#FF7800",
+    primary: "#FF7800",
     black: "#000",
     gray_dark: "#999",
     gray_light: "#CCC",

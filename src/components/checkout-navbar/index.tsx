@@ -11,6 +11,7 @@ export function CheckoutNavbar() {
           <NavLink
             className={({ isActive }) => (isActive ? "active" : undefined)}
             to="/checkout"
+            end
           >
             SACOLA
           </NavLink>

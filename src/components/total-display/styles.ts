@@ -21,7 +21,7 @@ export const Item = styled.li`
   line-height: 17px;
 
   &.discount {
-    color: ${MAIN_THEME.colors.orange};
+    color: ${MAIN_THEME.colors.primary};
   }
 
   &.total {

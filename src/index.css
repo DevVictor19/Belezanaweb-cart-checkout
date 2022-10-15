@@ -6,15 +6,11 @@
 
 html {
   height: 100%;
+  background-color: #eee;
 }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: inherit;
-}
-
-#root {
-  height: inherit;
 }
 
 button {
