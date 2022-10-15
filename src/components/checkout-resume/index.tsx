@@ -76,7 +76,7 @@ export function CheckoutResume() {
           />
           <Button
             label="seguir para o pagamento"
-            handleClick={(_) => navigate("payment")}
+            onClick={(_) => navigate("payment")}
           />
         </>
       ) : (

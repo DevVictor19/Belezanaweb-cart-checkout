@@ -1,6 +1,6 @@
 export interface ICartPaymentInfo {
-  cardNumber: number;
+  cardNumber: string;
   ownerName: string;
   validityDate: string;
-  cvv: number;
+  cvv: string;
 }

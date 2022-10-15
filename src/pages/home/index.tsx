@@ -9,7 +9,7 @@ export function Home() {
   return (
     <Button
       label="ir para tela de checkout"
-      handleClick={(_) => navigate("checkout")}
+      onClick={(_) => navigate("checkout")}
     />
   );
 }
