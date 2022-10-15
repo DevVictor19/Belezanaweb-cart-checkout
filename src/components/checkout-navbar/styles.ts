@@ -2,10 +2,6 @@ import styled from "styled-components";
 import { MAIN_THEME } from "../../themes/main";
 
 export const StyledNav = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
-
   width: 100%;
   height: 40px;
   display: flex;
