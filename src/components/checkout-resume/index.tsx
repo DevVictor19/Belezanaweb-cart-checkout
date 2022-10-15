@@ -18,14 +18,8 @@ import { Spinner } from "../spinner";
 export function CheckoutResume() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const products: ICartProduct[] = useSelector(
-    (state: RootState) => state.cart.products
-  );
-
-  const totalInfo: ICartTotalInfo | null = useSelector(
-    (state: RootState) => state.cart.totalInfo
-  );
+  const products = useSelector((state: RootState) => state.cart.products);
+  const totalInfo = useSelector((state: RootState) => state.cart.totalInfo);
 
   React.useEffect(() => {
     api
