@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { RootState } from "../../store";
-import { ICartTotalInfo } from "../../types/cart-total-info";
 
 import * as S from "./styles";
 import { Button } from "../button";
@@ -27,9 +26,7 @@ export function CheckoutPayment() {
     resolver: yupResolver(paymentSchema),
   });
 
-  const totalInfo: ICartTotalInfo = useSelector(
-    (state: RootState) => state.cart.totalInfo!
-  );
+  const totalInfo = useSelector((state: RootState) => state.cart.totalInfo!);
 
   const onSubmitForm = (data: ICartPaymentInfo) => {
     console.log(data);
