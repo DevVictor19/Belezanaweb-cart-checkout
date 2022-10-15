@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -13,9 +13,11 @@ import { LabelCard } from "../label-card";
 import { TotalDisplay } from "../total-display";
 import { paymentSchema } from "../../validation/payment-form-validation";
 import { ICartPaymentInfo } from "../../types/cart-payment-info";
+import { addPaymentInfo } from "../../store/slices/cart-slice";
 
 export function CheckoutPayment() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -31,6 +33,8 @@ export function CheckoutPayment() {
 
   const onSubmitForm = (data: ICartPaymentInfo) => {
     console.log(data);
+    dispatch(addPaymentInfo(data));
+    navigate("/checkout/confirmation");
   };
 
   return (
