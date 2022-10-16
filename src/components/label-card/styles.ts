@@ -4,6 +4,7 @@ import { MAIN_THEME } from "../../themes/main";
 export const Container = styled.div`
   width: 100%;
   max-width: 360px;
+  margin-top: 11px;
 `;
 
 export const Heading = styled.h2`
