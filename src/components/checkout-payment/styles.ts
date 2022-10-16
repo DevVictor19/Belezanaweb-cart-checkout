@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MAIN_THEME } from "../../themes/main";
 
-export const TwoCollumn = styled.div`
+export const TwoInputDiv = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: nowrap;

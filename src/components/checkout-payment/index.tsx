@@ -60,7 +60,7 @@ export function CheckoutPayment() {
             />
             <p>{errors.ownerName?.message}</p>
           </S.InputDiv>
-          <S.TwoCollumn>
+          <S.TwoInputDiv>
             <S.InputDiv>
               <label htmlFor="validity">Validade (mês/ano):</label>
               <input
@@ -83,7 +83,7 @@ export function CheckoutPayment() {
               />
               <p>{errors.cvv?.message}</p>
             </S.InputDiv>
-          </S.TwoCollumn>
+          </S.TwoInputDiv>
         </form>
       </LabelCard>
       <TotalDisplay
