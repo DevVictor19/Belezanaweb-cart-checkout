@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { ProtectedRoutes } from "./protected.routes";
 import { Home } from "./pages/home";
 import { Checkout } from "./pages/checkout";
 import { Spinner } from "./components/spinner";
@@ -32,7 +33,7 @@ export function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="checkout" element={<Checkout />}>
+        <Route path="/checkout" element={<Checkout />}>
           <Route
             index
             element={
@@ -49,14 +50,16 @@ export function AppRoutes() {
               </LazyLoad>
             }
           />
-          <Route
-            path="confirmation"
-            element={
-              <LazyLoad>
-                <CheckoutConfirmation />
-              </LazyLoad>
-            }
-          />
+          <Route element={<ProtectedRoutes />}>
+            <Route
+              path="confirmation"
+              element={
+                <LazyLoad>
+                  <CheckoutConfirmation />
+                </LazyLoad>
+              }
+            />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
