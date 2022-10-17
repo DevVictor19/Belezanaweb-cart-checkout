@@ -10,7 +10,14 @@ Esse projeto foi feito com base no desafio front-end da empresa Beleza na Web. O
 - React Router V6
 - Yup
 - React-hook-form
-- Axios
+- Vite
+
+# Rodando a aplicação
+
+Para rodar a aplicação é necessário baixar na sua máquina e rodar os seguintes comandos no diretório do projeto:
+
+- npm install
+- npm run dev
 
 # Principais Componentes
 
