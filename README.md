@@ -7,6 +7,7 @@ Esse projeto foi feito com base no desafio front-end da empresa Beleza na Web. O
 - TypeScript
 - Redux / Redux toolkit
 - Styled Components
+- Axios
 - React Router V6
 - Yup
 - React-hook-form
