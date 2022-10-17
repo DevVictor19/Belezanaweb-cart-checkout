@@ -2,7 +2,38 @@
 
 Esse projeto foi feito com base no desafio front-end da empresa Beleza na Web. Os requisitos do desafio, assim como o design da aplicação podem ser encontrados nesse link: https://github.com/belezanaweb/test-front.
 
-# Telas da Aplicação
+# Tecnologias Usadas
+
+- TypeScript
+- Redux / Redux toolkit
+- Styled Components
+- React Router V6
+- Yup
+- React-hook-form
+- Axios
+
+# Principais Componentes
+
+### (etapa 1) Componente sacola
+
+- Consumir api e atualizar estado do resumo do carrinho e estado do preço total
+- Renderizar resumo do carrinho (lista de produtos)
+- Renderizar o preço total
+
+### (etapa 2) Componente pagamento
+
+- Validar inputs do formulário com base nas regras de negócio
+- Validar e submeter dados de pagamento
+- Atualizar estado de dados de pagamento
+- Renderizar o preço total
+
+### (etata 3) Componente confirmação
+
+- Renderizar dados de pagamento
+- Renderizar resumo do carrinho (lista de produtos)
+- Renderizar o preço total
+
+# Telas da Aplicação (Minha implementação)
 
 ![Screen Shot 2022-10-17 at 17 25 29](https://user-images.githubusercontent.com/90735982/196276648-148184ae-17fa-4f9d-9292-00c8564ecd24.png)
 
