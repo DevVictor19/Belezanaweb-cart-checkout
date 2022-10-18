@@ -26,7 +26,11 @@ export const paymentSchema = yup.object().shape({
 
       if (!date) return false;
 
-      if (date[0] < currentMonth || date[0] > 12) {
+      if (date[1] === currentYear && date[0] <= currentMonth) {
+        return false;
+      }
+
+      if (date[0] < 1 || date[0] > 12) {
         return false;
       }
 
